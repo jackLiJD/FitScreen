@@ -2,11 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ff0000"
+            android:tag="/300-300,0-0\\"
+            android:text="/最小的宽度-最小的高度,最大的宽度-最大的高度\\" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -45,5 +56,7 @@
             android:tag="[100,50,100,50](50)"
             android:text="padding[左，上，右，下]" />
     </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

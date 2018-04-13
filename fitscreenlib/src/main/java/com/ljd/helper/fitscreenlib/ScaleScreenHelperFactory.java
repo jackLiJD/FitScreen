@@ -42,6 +42,31 @@ public final class ScaleScreenHelperFactory extends ScaleScreen implements Scale
         return view;
     }
 
+    public View loadViewMinMax(View v, int nw, int nh, int xw, int xh) {
+        try {
+            if(nw != 0) {
+                v.getClass().getMethod("setMinWidth", new Class[]{Integer.TYPE}).invoke(v, new Object[]{Integer.valueOf(this.getWidthHeight(nw))});
+            }
+
+            if(nh != 0) {
+                v.getClass().getMethod("setMinHeight", new Class[]{Integer.TYPE}).invoke(v, new Object[]{Integer.valueOf(this.getWidthHeight(nw))});
+            }
+
+            if(xw != 0) {
+                v.getClass().getMethod("setMaxWidth", new Class[]{Integer.TYPE}).invoke(v, new Object[]{Integer.valueOf(this.getWidthHeight(nw))});
+            }
+
+            if(xh != 0) {
+                v.getClass().getMethod("setMaxHeight", new Class[]{Integer.TYPE}).invoke(v, new Object[]{Integer.valueOf(this.getWidthHeight(nw))});
+            }
+        } catch (Exception var7) {
+            ;
+        }
+
+        return v;
+    }
+
+
     public View loadViewMargin(View view, int left, int top, int right, int bottom) {
         try {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams)view.getLayoutParams();

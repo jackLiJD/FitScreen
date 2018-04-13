@@ -14,8 +14,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MyApplication.scaleScreenHelper.loadView((ViewGroup) getWindow().getDecorView());
-
-
-
     }
 }

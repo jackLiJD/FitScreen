@@ -13,6 +13,8 @@ import android.view.ViewGroup;
  * 参考链接：
  */
 public interface ScaleScreenHelper {
+    View loadViewMinMax(View var1, int var2, int var3, int var4, int var5);
+
     View loadViewPadding(View var1, int var2, int var3, int var4, int var5);
 
     View loadViewMargin(View var1, int var2, int var3, int var4, int var5);
