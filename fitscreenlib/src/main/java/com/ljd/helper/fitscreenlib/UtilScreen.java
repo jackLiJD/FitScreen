@@ -25,4 +25,15 @@ public class UtilScreen {
         windowManager.getDefaultDisplay().getMetrics(displayMetrics);
         return new int[]{displayMetrics.widthPixels, displayMetrics.heightPixels};
     }
+    public static int pxToTag(Context context,int pxWidth,int sample ) {
+        int tagWidth = 0;
+        tagWidth = (pxWidth* sample / UtilScreen.screenSize(context)[0]) ;
+        return tagWidth;
+    }
+
+    public static int tagToPx(Context context,int tagWidth,int sample){
+        int pxWidth = 0;
+        pxWidth = (tagWidth* UtilScreen.screenSize(context)[0]/sample ) ;
+        return pxWidth;
+    }
 }

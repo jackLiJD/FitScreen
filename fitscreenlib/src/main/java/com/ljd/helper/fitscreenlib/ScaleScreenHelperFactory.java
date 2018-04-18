@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -45,19 +47,21 @@ public final class ScaleScreenHelperFactory extends ScaleScreen implements Scale
     public View loadViewMinMax(View v, int nw, int nh, int xw, int xh) {
         try {
             if(nw != 0) {
-                v.getClass().getMethod("setMinWidth", new Class[]{Integer.TYPE}).invoke(v, new Object[]{Integer.valueOf(this.getWidthHeight(nw))});
+//               v.setMinimumWidth(getWidthHeight(nw));
+                v.getClass().getMethod("setMinWidth", new Class[]{Integer.TYPE}).invoke(v, new Object[]{Integer.valueOf(getWidthHeight(nw))});
             }
 
             if(nh != 0) {
-                v.getClass().getMethod("setMinHeight", new Class[]{Integer.TYPE}).invoke(v, new Object[]{Integer.valueOf(this.getWidthHeight(nw))});
+//                v.setMinimumHeight(getWidthHeight(nh));
+                v.getClass().getMethod("setMinHeight", new Class[]{Integer.TYPE}).invoke(v, new Object[]{Integer.valueOf(getWidthHeight(nh))});
             }
 
             if(xw != 0) {
-                v.getClass().getMethod("setMaxWidth", new Class[]{Integer.TYPE}).invoke(v, new Object[]{Integer.valueOf(this.getWidthHeight(nw))});
+                v.getClass().getMethod("setMaxWidth", new Class[]{Integer.TYPE}).invoke(v, new Object[]{Integer.valueOf(getWidthHeight(xw))});
             }
 
             if(xh != 0) {
-                v.getClass().getMethod("setMaxHeight", new Class[]{Integer.TYPE}).invoke(v, new Object[]{Integer.valueOf(this.getWidthHeight(nw))});
+                v.getClass().getMethod("setMaxHeight", new Class[]{Integer.TYPE}).invoke(v, new Object[]{Integer.valueOf(getWidthHeight(xh))});
             }
         } catch (Exception var7) {
             ;
